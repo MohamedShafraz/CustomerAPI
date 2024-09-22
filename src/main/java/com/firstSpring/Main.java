@@ -37,7 +37,6 @@ public class Main {
         customer.setAge(request.age());
         customerRepository.save(customer);
     }
-
     @DeleteMapping("{customerId}")
     public void deleteCustomer(@PathVariable("customerId") Integer customerId){
         customerRepository.deleteById(customerId);
@@ -50,10 +49,7 @@ public class Main {
         customer.setEmail(request.email());
         customer.setAge(request.age());
         customerRepository.save(customer);
-
     }
-
-
 //    //For Json  output
 //    @GetMapping("/")
 //    public HomeResponse home(){
