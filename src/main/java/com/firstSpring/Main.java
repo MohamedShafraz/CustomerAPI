@@ -37,6 +37,23 @@ public class Main {
         customer.setAge(request.age());
         customerRepository.save(customer);
     }
+
+    @DeleteMapping("{customerId}")
+    public void deleteCustomer(@PathVariable("customerId") Integer customerId){
+        customerRepository.deleteById(customerId);
+    }
+    @PutMapping("{customerId}")
+    public  void updateCustomer(@PathVariable("customerId") Integer customerId,@RequestBody NewCustomerRequest request){
+        Customer customer = new Customer();
+        customer.setId(customerId);
+        customer.setName(request.name());
+        customer.setEmail(request.email());
+        customer.setAge(request.age());
+        customerRepository.save(customer);
+
+    }
+
+
 //    //For Json  output
 //    @GetMapping("/")
 //    public HomeResponse home(){
