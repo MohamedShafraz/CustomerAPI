@@ -37,6 +37,7 @@ public class Main {
         customer.setAge(request.age());
         customerRepository.save(customer);
     }
+
     @DeleteMapping("{customerId}")
     public void deleteCustomer(@PathVariable("customerId") Integer customerId){
         customerRepository.deleteById(customerId);
@@ -58,3 +59,4 @@ public class Main {
 //    //like final class but record classes have more constraints compared to regular final classes
 //    record HomeResponse(String message){}
 }
+
